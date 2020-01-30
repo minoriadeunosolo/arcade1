@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.2" orientation="isometric" renderorder="right-down" compressionlevel="-1" width="100" height="100" tilewidth="256" tileheight="149" infinite="0" nextlayerid="7" nextobjectid="1">
+ <tileset firstgid="1" name="patrones" tilewidth="256" tileheight="512" tilecount="288" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="256" height="512" source="isometric_dungeon2/barrel_E.png"/>
+  </tile>
+  <tile id="1">
+   <image width="256" height="512" source="isometric_dungeon2/barrel_N.png"/>
+  </tile>
+  <tile id="2">
+   <image width="256" height="512" source="isometric_dungeon2/barrel_S.png"/>
+  </tile>
+  <tile id="3">
+   <image width="256" height="512" source="isometric_dungeon2/barrel_W.png"/>
+  </tile>
+  <tile id="4">
+   <image width="256" height="512" source="isometric_dungeon2/barrels_E.png"/>
+  </tile>
+  <tile id="5">
+   <image width="256" height="512" source="isometric_dungeon2/barrels_N.png"/>
+  </tile>
+  <tile id="6">
+   <image width="256" height="512" source="isometric_dungeon2/barrels_S.png"/>
+  </tile>
+  <tile id="7">
+   <image width="256" height="512" source="isometric_dungeon2/barrels_W.png"/>
+  </tile>
+  <tile id="8">
+   <image width="256" height="512" source="isometric_dungeon2/barrelsStacked_E.png"/>
+  </tile>
+  <tile id="9">
+   <image width="256" height="512" source="isometric_dungeon2/barrelsStacked_N.png"/>
+  </tile>
+  <tile id="10">
+   <image width="256" height="512" source="isometric_dungeon2/barrelsStacked_S.png"/>
+  </tile>
+  <tile id="11">
+   <image width="256" height="512" source="isometric_dungeon2/barrelsStacked_W.png"/>
+  </tile>
+  <tile id="12">
+   <image width="256" height="512" source="isometric_dungeon2/bridge_E.png"/>
+  </tile>
+  <tile id="13">
+   <image width="256" height="512" source="isometric_dungeon2/bridge_N.png"/>
+  </tile>
+  <tile id="14">
+   <image width="256" height="512" source="isometric_dungeon2/bridge_S.png"/>
+  </tile>
+  <tile id="15">
+   <image width="256" height="512" source="isometric_dungeon2/bridge_W.png"/>
+  </tile>
+  <tile id="16">
+   <image width="256" height="512" source="isometric_dungeon2/bridgeBroken_E.png"/>
+  </tile>
+  <tile id="17">
+   <image width="256" height="512" source="isometric_dungeon2/bridgeBroken_N.png"/>
+  </tile>
+  <tile id="18">
+   <image width="256" height="512" source="isometric_dungeon2/bridgeBroken_S.png"/>
+  </tile>
+  <tile id="19">
+   <image width="256" height="512" source="isometric_dungeon2/bridgeBroken_W.png"/>
+  </tile>
+  <tile id="20">
+   <image width="256" height="512" source="isometric_dungeon2/chair_E.png"/>
+  </tile>
+  <tile id="21">
+   <image width="256" height="512" source="isometric_dungeon2/chair_N.png"/>
+  </tile>
+  <tile id="22">
+   <image width="256" height="512" source="isometric_dungeon2/chair_S.png"/>
+  </tile>
+  <tile id="23">
+   <image width="256" height="512" source="isometric_dungeon2/chair_W.png"/>
+  </tile>
+  <tile id="24">
+   <image width="256" height="512" source="isometric_dungeon2/chestClosed_E.png"/>
+  </tile>
+  <tile id="25">
+   <image width="256" height="512" source="isometric_dungeon2/chestClosed_N.png"/>
+  </tile>
+  <tile id="26">
+   <image width="256" height="512" source="isometric_dungeon2/chestClosed_S.png"/>
+  </tile>
+  <tile id="27">
+   <image width="256" height="512" source="isometric_dungeon2/chestClosed_W.png"/>
+  </tile>
+  <tile id="28">
+   <image width="256" height="512" source="isometric_dungeon2/chestOpen_E.png"/>
+  </tile>
+  <tile id="29">
+   <image width="256" height="512" source="isometric_dungeon2/chestOpen_N.png"/>
+  </tile>
+  <tile id="30">
+   <image width="256" height="512" source="isometric_dungeon2/chestOpen_S.png"/>
+  </tile>
+  <tile id="31">
+   <image width="256" height="512" source="isometric_dungeon2/chestOpen_W.png"/>
+  </tile>
+  <tile id="32">
+   <image width="256" height="512" source="isometric_dungeon2/dirt_E.png"/>
+  </tile>
+  <tile id="33">
+   <image width="256" height="512" source="isometric_dungeon2/dirt_N.png"/>
+  </tile>
+  <tile id="34">
+   <image width="256" height="512" source="isometric_dungeon2/dirt_S.png"/>
+  </tile>
+  <tile id="35">
+   <image width="256" height="512" source="isometric_dungeon2/dirt_W.png"/>
+  </tile>
+  <tile id="36">
+   <image width="256" height="512" source="isometric_dungeon2/dirtTiles_E.png"/>
+  </tile>
+  <tile id="37">
+   <image width="256" height="512" source="isometric_dungeon2/dirtTiles_N.png"/>
+  </tile>
+  <tile id="38">
+   <image width="256" height="512" source="isometric_dungeon2/dirtTiles_S.png"/>
+  </tile>
+  <tile id="39">
+   <image width="256" height="512" source="isometric_dungeon2/dirtTiles_W.png"/>
+  </tile>
+  <tile id="40">
+   <image width="256" height="512" source="isometric_dungeon2/planks_E.png"/>
+  </tile>
+  <tile id="41">
+   <image width="256" height="512" source="isometric_dungeon2/planks_N.png"/>
+  </tile>
+  <tile id="42">
+   <image width="256" height="512" source="isometric_dungeon2/planks_S.png"/>
+  </tile>
+  <tile id="43">
+   <image width="256" height="512" source="isometric_dungeon2/planks_W.png"/>
+  </tile>
+  <tile id="44">
+   <image width="256" height="512" source="isometric_dungeon2/planksBroken_E.png"/>
+  </tile>
+  <tile id="45">
+   <image width="256" height="512" source="isometric_dungeon2/planksBroken_N.png"/>
+  </tile>
+  <tile id="46">
+   <image width="256" height="512" source="isometric_dungeon2/planksBroken_S.png"/>
+  </tile>
+  <tile id="47">
+   <image width="256" height="512" source="isometric_dungeon2/planksBroken_W.png"/>
+  </tile>
+  <tile id="48">
+   <image width="256" height="512" source="isometric_dungeon2/planksHole_E.png"/>
+  </tile>
+  <tile id="49">
+   <image width="256" height="512" source="isometric_dungeon2/planksHole_N.png"/>
+  </tile>
+  <tile id="50">
+   <image width="256" height="512" source="isometric_dungeon2/planksHole_S.png"/>
+  </tile>
+  <tile id="51">
+   <image width="256" height="512" source="isometric_dungeon2/planksHole_W.png"/>
+  </tile>
+  <tile id="52">
+   <image width="256" height="512" source="isometric_dungeon2/stairs_E.png"/>
+  </tile>
+  <tile id="53">
+   <image width="256" height="512" source="isometric_dungeon2/stairs_N.png"/>
+  </tile>
+  <tile id="54">
+   <image width="256" height="512" source="isometric_dungeon2/stairs_S.png"/>
+  </tile>
+  <tile id="55">
+   <image width="256" height="512" source="isometric_dungeon2/stairs_W.png"/>
+  </tile>
+  <tile id="56">
+   <image width="256" height="512" source="isometric_dungeon2/stairsAged_E.png"/>
+  </tile>
+  <tile id="57">
+   <image width="256" height="512" source="isometric_dungeon2/stairsAged_N.png"/>
+  </tile>
+  <tile id="58">
+   <image width="256" height="512" source="isometric_dungeon2/stairsAged_S.png"/>
+  </tile>
+  <tile id="59">
+   <image width="256" height="512" source="isometric_dungeon2/stairsAged_W.png"/>
+  </tile>
+  <tile id="60">
+   <image width="256" height="512" source="isometric_dungeon2/stairsCorner_E.png"/>
+  </tile>
+  <tile id="61">
+   <image width="256" height="512" source="isometric_dungeon2/stairsCorner_N.png"/>
+  </tile>
+  <tile id="62">
+   <image width="256" height="512" source="isometric_dungeon2/stairsCorner_S.png"/>
+  </tile>
+  <tile id="63">
+   <image width="256" height="512" source="isometric_dungeon2/stairsCorner_W.png"/>
+  </tile>
+  <tile id="64">
+   <image width="256" height="512" source="isometric_dungeon2/stairsSpiral_E.png"/>
+  </tile>
+  <tile id="65">
+   <image width="256" height="512" source="isometric_dungeon2/stairsSpiral_N.png"/>
+  </tile>
+  <tile id="66">
+   <image width="256" height="512" source="isometric_dungeon2/stairsSpiral_S.png"/>
+  </tile>
+  <tile id="67">
+   <image width="256" height="512" source="isometric_dungeon2/stairsSpiral_W.png"/>
+  </tile>
+  <tile id="68">
+   <image width="256" height="512" source="isometric_dungeon2/stone_E.png"/>
+  </tile>
+  <tile id="69">
+   <image width="256" height="512" source="isometric_dungeon2/stone_N.png"/>
+  </tile>
+  <tile id="70">
+   <image width="256" height="512" source="isometric_dungeon2/stone_S.png"/>
+  </tile>
+  <tile id="71">
+   <image width="256" height="512" source="isometric_dungeon2/stone_W.png"/>
+  </tile>
+  <tile id="72">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumn_E.png"/>
+  </tile>
+  <tile id="73">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumn_N.png"/>
+  </tile>
+  <tile id="74">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumn_S.png"/>
+  </tile>
+  <tile id="75">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumn_W.png"/>
+  </tile>
+  <tile id="76">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumnWood_E.png"/>
+  </tile>
+  <tile id="77">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumnWood_N.png"/>
+  </tile>
+  <tile id="78">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumnWood_S.png"/>
+  </tile>
+  <tile id="79">
+   <image width="256" height="512" source="isometric_dungeon2/stoneColumnWood_W.png"/>
+  </tile>
+  <tile id="80">
+   <image width="256" height="512" source="isometric_dungeon2/stoneCorner_E.png"/>
+  </tile>
+  <tile id="81">
+   <image width="256" height="512" source="isometric_dungeon2/stoneCorner_N.png"/>
+  </tile>
+  <tile id="82">
+   <image width="256" height="512" source="isometric_dungeon2/stoneCorner_S.png"/>
+  </tile>
+  <tile id="83">
+   <image width="256" height="512" source="isometric_dungeon2/stoneCorner_W.png"/>
+  </tile>
+  <tile id="84">
+   <image width="256" height="512" source="isometric_dungeon2/stoneInset_E.png"/>
+  </tile>
+  <tile id="85">
+   <image width="256" height="512" source="isometric_dungeon2/stoneInset_N.png"/>
+  </tile>
+  <tile id="86">
+   <image width="256" height="512" source="isometric_dungeon2/stoneInset_S.png"/>
+  </tile>
+  <tile id="87">
+   <image width="256" height="512" source="isometric_dungeon2/stoneInset_W.png"/>
+  </tile>
+  <tile id="88">
+   <image width="256" height="512" source="isometric_dungeon2/stoneLeft_E.png"/>
+  </tile>
+  <tile id="89">
+   <image width="256" height="512" source="isometric_dungeon2/stoneLeft_N.png"/>
+  </tile>
+  <tile id="90">
+   <image width="256" height="512" source="isometric_dungeon2/stoneLeft_S.png"/>
+  </tile>
+  <tile id="91">
+   <image width="256" height="512" source="isometric_dungeon2/stoneLeft_W.png"/>
+  </tile>
+  <tile id="92">
+   <image width="256" height="512" source="isometric_dungeon2/stoneMissingTiles_E.png"/>
+  </tile>
+  <tile id="93">
+   <image width="256" height="512" source="isometric_dungeon2/stoneMissingTiles_N.png"/>
+  </tile>
+  <tile id="94">
+   <image width="256" height="512" source="isometric_dungeon2/stoneMissingTiles_S.png"/>
+  </tile>
+  <tile id="95">
+   <image width="256" height="512" source="isometric_dungeon2/stoneMissingTiles_W.png"/>
+  </tile>
+  <tile id="96">
+   <image width="256" height="512" source="isometric_dungeon2/stoneRight_E.png"/>
+  </tile>
+  <tile id="97">
+   <image width="256" height="512" source="isometric_dungeon2/stoneRight_N.png"/>
+  </tile>
+  <tile id="98">
+   <image width="256" height="512" source="isometric_dungeon2/stoneRight_S.png"/>
+  </tile>
+  <tile id="99">
+   <image width="256" height="512" source="isometric_dungeon2/stoneRight_W.png"/>
+  </tile>
+  <tile id="100">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSide_E.png"/>
+  </tile>
+  <tile id="101">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSide_N.png"/>
+  </tile>
+  <tile id="102">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSide_S.png"/>
+  </tile>
+  <tile id="103">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSide_W.png"/>
+  </tile>
+  <tile id="104">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSideUneven_E.png"/>
+  </tile>
+  <tile id="105">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSideUneven_N.png"/>
+  </tile>
+  <tile id="106">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSideUneven_S.png"/>
+  </tile>
+  <tile id="107">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSideUneven_W.png"/>
+  </tile>
+  <tile id="108">
+   <image width="256" height="512" source="isometric_dungeon2/stoneStep_E.png"/>
+  </tile>
+  <tile id="109">
+   <image width="256" height="512" source="isometric_dungeon2/stoneStep_N.png"/>
+  </tile>
+  <tile id="110">
+   <image width="256" height="512" source="isometric_dungeon2/stoneStep_S.png"/>
+  </tile>
+  <tile id="111">
+   <image width="256" height="512" source="isometric_dungeon2/stoneStep_W.png"/>
+  </tile>
+  <tile id="112">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSteps_E.png"/>
+  </tile>
+  <tile id="113">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSteps_N.png"/>
+  </tile>
+  <tile id="114">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSteps_S.png"/>
+  </tile>
+  <tile id="115">
+   <image width="256" height="512" source="isometric_dungeon2/stoneSteps_W.png"/>
+  </tile>
+  <tile id="116">
+   <image width="256" height="512" source="isometric_dungeon2/stoneTile_E.png"/>
+  </tile>
+  <tile id="117">
+   <image width="256" height="512" source="isometric_dungeon2/stoneTile_N.png"/>
+  </tile>
+  <tile id="118">
+   <image width="256" height="512" source="isometric_dungeon2/stoneTile_S.png"/>
+  </tile>
+  <tile id="119">
+   <image width="256" height="512" source="isometric_dungeon2/stoneTile_W.png"/>
+  </tile>
+  <tile id="120">
+   <image width="256" height="512" source="isometric_dungeon2/stoneUneven_E.png"/>
+  </tile>
+  <tile id="121">
+   <image width="256" height="512" source="isometric_dungeon2/stoneUneven_N.png"/>
+  </tile>
+  <tile id="122">
+   <image width="256" height="512" source="isometric_dungeon2/stoneUneven_S.png"/>
+  </tile>
+  <tile id="123">
+   <image width="256" height="512" source="isometric_dungeon2/stoneUneven_W.png"/>
+  </tile>
+  <tile id="124">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWall_E.png"/>
+  </tile>
+  <tile id="125">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWall_N.png"/>
+  </tile>
+  <tile id="126">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWall_S.png"/>
+  </tile>
+  <tile id="127">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWall_W.png"/>
+  </tile>
+  <tile id="128">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAged_E.png"/>
+  </tile>
+  <tile id="129">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAged_N.png"/>
+  </tile>
+  <tile id="130">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAged_S.png"/>
+  </tile>
+  <tile id="131">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAged_W.png"/>
+  </tile>
+  <tile id="132">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedLeft_E.png"/>
+  </tile>
+  <tile id="133">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedLeft_N.png"/>
+  </tile>
+  <tile id="134">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedLeft_S.png"/>
+  </tile>
+  <tile id="135">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedLeft_W.png"/>
+  </tile>
+  <tile id="136">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedRight_E.png"/>
+  </tile>
+  <tile id="137">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedRight_N.png"/>
+  </tile>
+  <tile id="138">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedRight_S.png"/>
+  </tile>
+  <tile id="139">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallAgedRight_W.png"/>
+  </tile>
+  <tile id="140">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallArchway_E.png"/>
+  </tile>
+  <tile id="141">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallArchway_N.png"/>
+  </tile>
+  <tile id="142">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallArchway_S.png"/>
+  </tile>
+  <tile id="143">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallArchway_W.png"/>
+  </tile>
+  <tile id="144">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBroken_E.png"/>
+  </tile>
+  <tile id="145">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBroken_N.png"/>
+  </tile>
+  <tile id="146">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBroken_S.png"/>
+  </tile>
+  <tile id="147">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBroken_W.png"/>
+  </tile>
+  <tile id="148">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenLeft_E.png"/>
+  </tile>
+  <tile id="149">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenLeft_N.png"/>
+  </tile>
+  <tile id="150">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenLeft_S.png"/>
+  </tile>
+  <tile id="151">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenLeft_W.png"/>
+  </tile>
+  <tile id="152">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenRight_E.png"/>
+  </tile>
+  <tile id="153">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenRight_N.png"/>
+  </tile>
+  <tile id="154">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenRight_S.png"/>
+  </tile>
+  <tile id="155">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallBrokenRight_W.png"/>
+  </tile>
+  <tile id="156">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumn_E.png"/>
+  </tile>
+  <tile id="157">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumn_N.png"/>
+  </tile>
+  <tile id="158">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumn_S.png"/>
+  </tile>
+  <tile id="159">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumn_W.png"/>
+  </tile>
+  <tile id="160">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumnIn_E.png"/>
+  </tile>
+  <tile id="161">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumnIn_N.png"/>
+  </tile>
+  <tile id="162">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumnIn_S.png"/>
+  </tile>
+  <tile id="163">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallColumnIn_W.png"/>
+  </tile>
+  <tile id="164">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallCorner_E.png"/>
+  </tile>
+  <tile id="165">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallCorner_N.png"/>
+  </tile>
+  <tile id="166">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallCorner_S.png"/>
+  </tile>
+  <tile id="167">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallCorner_W.png"/>
+  </tile>
+  <tile id="168">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoor_E.png"/>
+  </tile>
+  <tile id="169">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoor_N.png"/>
+  </tile>
+  <tile id="170">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoor_S.png"/>
+  </tile>
+  <tile id="171">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoor_W.png"/>
+  </tile>
+  <tile id="172">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorBars_E.png"/>
+  </tile>
+  <tile id="173">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorBars_N.png"/>
+  </tile>
+  <tile id="174">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorBars_S.png"/>
+  </tile>
+  <tile id="175">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorBars_W.png"/>
+  </tile>
+  <tile id="176">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorClosed_E.png"/>
+  </tile>
+  <tile id="177">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorClosed_N.png"/>
+  </tile>
+  <tile id="178">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorClosed_S.png"/>
+  </tile>
+  <tile id="179">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorClosed_W.png"/>
+  </tile>
+  <tile id="180">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorOpen_E.png"/>
+  </tile>
+  <tile id="181">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorOpen_N.png"/>
+  </tile>
+  <tile id="182">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorOpen_S.png"/>
+  </tile>
+  <tile id="183">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallDoorOpen_W.png"/>
+  </tile>
+  <tile id="184">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGate_E.png"/>
+  </tile>
+  <tile id="185">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGate_N.png"/>
+  </tile>
+  <tile id="186">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGate_S.png"/>
+  </tile>
+  <tile id="187">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGate_W.png"/>
+  </tile>
+  <tile id="188">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateBars_E.png"/>
+  </tile>
+  <tile id="189">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateBars_N.png"/>
+  </tile>
+  <tile id="190">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateBars_S.png"/>
+  </tile>
+  <tile id="191">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateBars_W.png"/>
+  </tile>
+  <tile id="192">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateClosed_E.png"/>
+  </tile>
+  <tile id="193">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateClosed_N.png"/>
+  </tile>
+  <tile id="194">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateClosed_S.png"/>
+  </tile>
+  <tile id="195">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateClosed_W.png"/>
+  </tile>
+  <tile id="196">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateOpen_E.png"/>
+  </tile>
+  <tile id="197">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateOpen_N.png"/>
+  </tile>
+  <tile id="198">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateOpen_S.png"/>
+  </tile>
+  <tile id="199">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallGateOpen_W.png"/>
+  </tile>
+  <tile id="200">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHalf_E.png"/>
+  </tile>
+  <tile id="201">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHalf_N.png"/>
+  </tile>
+  <tile id="202">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHalf_S.png"/>
+  </tile>
+  <tile id="203">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHalf_W.png"/>
+  </tile>
+  <tile id="204">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHole_E.png"/>
+  </tile>
+  <tile id="205">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHole_N.png"/>
+  </tile>
+  <tile id="206">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHole_S.png"/>
+  </tile>
+  <tile id="207">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallHole_W.png"/>
+  </tile>
+  <tile id="208">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRound_E.png"/>
+  </tile>
+  <tile id="209">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRound_N.png"/>
+  </tile>
+  <tile id="210">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRound_S.png"/>
+  </tile>
+  <tile id="211">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRound_W.png"/>
+  </tile>
+  <tile id="212">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundBroken_E.png"/>
+  </tile>
+  <tile id="213">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundBroken_N.png"/>
+  </tile>
+  <tile id="214">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundBroken_S.png"/>
+  </tile>
+  <tile id="215">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundBroken_W.png"/>
+  </tile>
+  <tile id="216">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundWindow_E.png"/>
+  </tile>
+  <tile id="217">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundWindow_N.png"/>
+  </tile>
+  <tile id="218">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundWindow_S.png"/>
+  </tile>
+  <tile id="219">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallRoundWindow_W.png"/>
+  </tile>
+  <tile id="220">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallStructure_E.png"/>
+  </tile>
+  <tile id="221">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallStructure_N.png"/>
+  </tile>
+  <tile id="222">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallStructure_S.png"/>
+  </tile>
+  <tile id="223">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallStructure_W.png"/>
+  </tile>
+  <tile id="224">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallTop_E.png"/>
+  </tile>
+  <tile id="225">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallTop_N.png"/>
+  </tile>
+  <tile id="226">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallTop_S.png"/>
+  </tile>
+  <tile id="227">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallTop_W.png"/>
+  </tile>
+  <tile id="228">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindow_E.png"/>
+  </tile>
+  <tile id="229">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindow_N.png"/>
+  </tile>
+  <tile id="230">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindow_S.png"/>
+  </tile>
+  <tile id="231">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindow_W.png"/>
+  </tile>
+  <tile id="232">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindowBars_E.png"/>
+  </tile>
+  <tile id="233">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindowBars_N.png"/>
+  </tile>
+  <tile id="234">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindowBars_S.png"/>
+  </tile>
+  <tile id="235">
+   <image width="256" height="512" source="isometric_dungeon2/stoneWallWindowBars_W.png"/>
+  </tile>
+  <tile id="236">
+   <image width="256" height="512" source="isometric_dungeon2/tableChairsBroken_E.png"/>
+  </tile>
+  <tile id="237">
+   <image width="256" height="512" source="isometric_dungeon2/tableChairsBroken_N.png"/>
+  </tile>
+  <tile id="238">
+   <image width="256" height="512" source="isometric_dungeon2/tableChairsBroken_S.png"/>
+  </tile>
+  <tile id="239">
+   <image width="256" height="512" source="isometric_dungeon2/tableChairsBroken_W.png"/>
+  </tile>
+  <tile id="240">
+   <image width="256" height="512" source="isometric_dungeon2/tableRound_E.png"/>
+  </tile>
+  <tile id="241">
+   <image width="256" height="512" source="isometric_dungeon2/tableRound_N.png"/>
+  </tile>
+  <tile id="242">
+   <image width="256" height="512" source="isometric_dungeon2/tableRound_S.png"/>
+  </tile>
+  <tile id="243">
+   <image width="256" height="512" source="isometric_dungeon2/tableRound_W.png"/>
+  </tile>
+  <tile id="244">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundChairs_E.png"/>
+  </tile>
+  <tile id="245">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundChairs_N.png"/>
+  </tile>
+  <tile id="246">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundChairs_S.png"/>
+  </tile>
+  <tile id="247">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundChairs_W.png"/>
+  </tile>
+  <tile id="248">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundItemsChairs_E.png"/>
+  </tile>
+  <tile id="249">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundItemsChairs_N.png"/>
+  </tile>
+  <tile id="250">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundItemsChairs_S.png"/>
+  </tile>
+  <tile id="251">
+   <image width="256" height="512" source="isometric_dungeon2/tableRoundItemsChairs_W.png"/>
+  </tile>
+  <tile id="252">
+   <image width="256" height="512" source="isometric_dungeon2/tableShort_E.png"/>
+  </tile>
+  <tile id="253">
+   <image width="256" height="512" source="isometric_dungeon2/tableShort_N.png"/>
+  </tile>
+  <tile id="254">
+   <image width="256" height="512" source="isometric_dungeon2/tableShort_S.png"/>
+  </tile>
+  <tile id="255">
+   <image width="256" height="512" source="isometric_dungeon2/tableShort_W.png"/>
+  </tile>
+  <tile id="256">
+   <image width="256" height="512" source="isometric_dungeon2/tableShortChairs_E.png"/>
+  </tile>
+  <tile id="257">
+   <image width="256" height="512" source="isometric_dungeon2/tableShortChairs_N.png"/>
+  </tile>
+  <tile id="258">
+   <image width="256" height="512" source="isometric_dungeon2/tableShortChairs_S.png"/>
+  </tile>
+  <tile id="259">
+   <image width="256" height="512" source="isometric_dungeon2/tableShortChairs_W.png"/>
+  </tile>
+  <tile id="260">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrate_E.png"/>
+  </tile>
+  <tile id="261">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrate_N.png"/>
+  </tile>
+  <tile id="262">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrate_S.png"/>
+  </tile>
+  <tile id="263">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrate_W.png"/>
+  </tile>
+  <tile id="264">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrates_E.png"/>
+  </tile>
+  <tile id="265">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrates_N.png"/>
+  </tile>
+  <tile id="266">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrates_S.png"/>
+  </tile>
+  <tile id="267">
+   <image width="256" height="512" source="isometric_dungeon2/woodenCrates_W.png"/>
+  </tile>
+  <tile id="268">
+   <image width="256" height="512" source="isometric_dungeon2/woodenPile_E.png"/>
+  </tile>
+  <tile id="269">
+   <image width="256" height="512" source="isometric_dungeon2/woodenPile_N.png"/>
+  </tile>
+  <tile id="270">
+   <image width="256" height="512" source="isometric_dungeon2/woodenPile_S.png"/>
+  </tile>
+  <tile id="271">
+   <image width="256" height="512" source="isometric_dungeon2/woodenPile_W.png"/>
+  </tile>
+  <tile id="272">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportBeams_E.png"/>
+  </tile>
+  <tile id="273">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportBeams_N.png"/>
+  </tile>
+  <tile id="274">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportBeams_S.png"/>
+  </tile>
+  <tile id="275">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportBeams_W.png"/>
+  </tile>
+  <tile id="276">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupports_E.png"/>
+  </tile>
+  <tile id="277">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupports_N.png"/>
+  </tile>
+  <tile id="278">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupports_S.png"/>
+  </tile>
+  <tile id="279">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupports_W.png"/>
+  </tile>
+  <tile id="280">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBeam_E.png"/>
+  </tile>
+  <tile id="281">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBeam_N.png"/>
+  </tile>
+  <tile id="282">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBeam_S.png"/>
+  </tile>
+  <tile id="283">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBeam_W.png"/>
+  </tile>
+  <tile id="284">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBlock_E.png"/>
+  </tile>
+  <tile id="285">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBlock_N.png"/>
+  </tile>
+  <tile id="286">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBlock_S.png"/>
+  </tile>
+  <tile id="287">
+   <image width="256" height="512" source="isometric_dungeon2/woodenSupportsBlock_W.png"/>
+  </tile>
+ </tileset>
+ <layer id="4" name="Floor" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1UEOglAMBNBeTuBeXNz8aAMSUDa2m/eSRtczmU8EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACVHoej17EPnfTTSa/lfcMc533opM4Ur7zH7xL66DT2MMVnF1cb4f9Gzvle5U7OOtJJnXyrMv9xc2y97DdDvdzKuGMv9Mj899uhz7r7n98Qaq0XR4872Xu76tzdgk7q/cpcJ/Wm+J67PmBjDwAAAAAAAAAAcM8TeFMeQg==
+  </data>
+ </layer>
+ <layer id="5" name="Furniture" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+ <layer id="6" name="Walls" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+</map>
