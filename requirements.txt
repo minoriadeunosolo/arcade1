@@ -1,0 +1,9 @@
+arcade==2.2.5
+attrs==19.3.0
+dataclasses==0.7
+future==0.18.2
+numpy==1.18.1
+Pillow==7.0.0
+pyglet==1.4.10
+pyglet-ffmpeg2==0.1.16
+pytiled-parser==0.9.2
