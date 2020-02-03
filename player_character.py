@@ -47,8 +47,8 @@ class PlayerCharacter(arcade.Sprite):
 
         # Images from Kenney.nl's Asset Pack 3
         #            ":resources:images/animated_characters/female_person/femalePerson_idle.png"
-        #main_path = ":resources:images/animated_characters/female_adventurer/femaleAdventurer"
-        main_path = ":resources:images/animated_characters/female_person/femalePerson"
+        main_path = ":resources:images/animated_characters/female_adventurer/femaleAdventurer"
+        #main_path = ":resources:images/animated_characters/female_person/femalePerson"
         # main_path = ":resources:images/animated_characters/male_person/malePerson"
         # main_path = ":resources:images/animated_characters/male_adventurer/maleAdventurer"
         # main_path = ":resources:images/animated_characters/zombie/zombie"
@@ -62,6 +62,8 @@ class PlayerCharacter(arcade.Sprite):
         for i in range(8):
             texture = load_texture_pair(f"{main_path}_walk{i}.png")
             self.walk_textures.append(texture)
+
+        self.repairing = False
 
     def update_animation(self, delta_time: float = 1/60):
 
