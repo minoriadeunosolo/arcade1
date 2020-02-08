@@ -42,8 +42,8 @@ class BaseCharacter(arcade.Sprite):
 
         # Adjust the collision box. Default includes too much empty space
         # side-to-side. Box is centered at sprite center, (0, 0)
-        self.points = [[-22, -64], [22, -64], [22, 28], [-22, 28]]
-
+        #self.points = [[-22, -64], [22, -64], [22, 28], [-22, 28]]
+        self.points = [[-15, -44], [15, -44], [15, 21], [-15, 21]]
         self.load_textures(self.assets_availables[type_of_character])
 
     @classmethod

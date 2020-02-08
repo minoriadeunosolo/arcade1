@@ -16,13 +16,12 @@ def _check_visible_elements_in_radius(px, py, sprite2, x1, x2, y1, y2):
 
     :returns: Boolean
     """
-
+    RADIUS_VIEW2 = 10
     #sloooooooooooooooooow
     x = sprite2.position[0]
     y = sprite2.position[1]
     if x < x1 or x>x2 or y<y1 or y>y2:
         return False
-
 
     diff_x = px - x
     diff_x2 = diff_x * diff_x
@@ -41,12 +40,13 @@ def _check_visible_elements_in_radius(px, py, sprite2, x1, x2, y1, y2):
 
     return True
 
+
 def show_only_neighbourgh(expanded_sprite, list_all_sprites, previous_visible_sprites):
     if list_all_sprites.use_spatial_hash:
         sprite_list_to_show = list_all_sprites.spatial_hash.get_objects_for_box(expanded_sprite)
         for s in sprite_list_to_show:
-                if s.alpha == 0:
-                    s.alpha = 255
+            if s.alpha == 0:
+                s.alpha = 255
 
         for s in previous_visible_sprites:
             if s not in sprite_list_to_show:
@@ -55,19 +55,21 @@ def show_only_neighbourgh(expanded_sprite, list_all_sprites, previous_visible_sp
 
         return sprite_list_to_show
 
+
 def repair_nearby_tiles(expanded_sprite, floor_sprites, holes_sprites):
     if holes_sprites.use_spatial_hash:
         nearby_sprites = holes_sprites.spatial_hash.get_objects_for_box(expanded_sprite)
-        for ix,s in enumerate(nearby_sprites):
+        if nearby_sprites:
+            for ix, s in enumerate(nearby_sprites):
                 if s in holes_sprites:
-                    holes_sprites.remove(s)
+                    s.remove_from_sprite_lists()
+
                 tile_sprite = Sprite(RES_RAPAIRED_STONE.format(ORIENTATIONS[ix % MAX_INDEX_ORIENTATIONS]), SPRITE_SCALING)
                 tile_sprite.center_x = s.center_x
                 tile_sprite.center_y = s.center_y
                 floor_sprites.append(tile_sprite)
 
-        holes_sprites._recalculate_spatial_hashes()
-
+            holes_sprites._recalculate_spatial_hashes()
 
 
 def _circular_check(player, sprite_list_to_check, x1, x2, y1, y2):
@@ -80,7 +82,7 @@ def _circular_check(player, sprite_list_to_check, x1, x2, y1, y2):
     px = player.position[0]
     py = player.position[1]
     for sprite2 in sprite_list_to_check:
-        if _check_visible_elements_in_radius(px,py, sprite2, x1, x2, y1, y2):
-            sprite2.alpha=255
+        if _check_visible_elements_in_radius(px, py, sprite2, x1, x2, y1, y2):
+            sprite2.alpha = 255
         else:
-            sprite2.alpha=0
+            sprite2.alpha = 0
