@@ -12,10 +12,20 @@ from common import RES_BACKGROUND_MUSIC
 from common import VIEWMODE_YOUWIN, VIEWMODE_GAMEOVER
 
 
+background_music = None
 def play_background_music(dummy=None):
     print("Play music...")
-    background_music = arcade.load_sound(RES_BACKGROUND_MUSIC)
+    global background_music
+    if not background_music:
+        background_music = arcade.load_sound(RES_BACKGROUND_MUSIC)
+    background_music.player.loop = True
     arcade.play_sound(background_music)
+
+def stop_background_music():
+    global background_music
+    if background_music:
+        arcade.unschedule(play_background_music)
+        background_music.player.seek(100000)
 
 
 class GameView(BaseView):
@@ -140,11 +150,10 @@ class GameView(BaseView):
         self.last_update_alpha_y = self.player_sprite.center_y
         self.neighbours_to_show = []
 
-
         if not self.background_music:
             self.background_music = True
             play_background_music()
-            arcade.schedule(play_background_music, 95 )#95)
+            arcade.schedule(play_background_music, 95)#95)
 
     def on_draw(self):
         """
@@ -167,6 +176,8 @@ class GameView(BaseView):
 
         if key == arcade.key.Q:
             exit()
+        if key == arcade.key.W:
+            self.changeviewmode(VIEWMODE_YOUWIN)
 
         if key == arcade.key.SPACE:
             self.player_sprite.repairing = True
@@ -208,6 +219,8 @@ class GameView(BaseView):
         self.update_viewport(self.player_sprite)
 
         if status == STATUS_GAMEOVER:
+            stop_background_music()
             self.changeviewmode(VIEWMODE_GAMEOVER)
         elif status == STATUS_YOUWIN:
+            stop_background_music()
             self.changeviewmode(VIEWMODE_YOUWIN)

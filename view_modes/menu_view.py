@@ -19,27 +19,35 @@ class MenuView(BaseView):
         # Dummy characters for the MENU
         self.menucharacters = arcade.SpriteList()
 
-        dummycharacter = DummyCharacter(DummyCharacter.CHARACTER_FEMALE_ADV)
-        dummycharacter.center_x = 2*VIEWPORT_MARGIN + 110
-        dummycharacter.center_y = 2*VIEWPORT_MARGIN - 100
-        self.menucharacters.append(dummycharacter)
+        base_x_ana = 2 * VIEWPORT_MARGIN + 110
+        self.indie_ana = DummyCharacter(DummyCharacter.CHARACTER_FEMALE_ADV, base_x_ana, base_x_ana + 150, 3)
 
-        dummycharacter = DummyCharacter(DummyCharacter.CHARACTER_ZOMBIE)
-        dummycharacter.center_x = VIEWPORT_MARGIN + 35
-        dummycharacter.center_y = 2*VIEWPORT_MARGIN - 100
-        self.menucharacters.append(dummycharacter)
+        self.indie_ana.center_x = base_x_ana
+        self.indie_ana.center_y = 2*VIEWPORT_MARGIN - 100
+        self.menucharacters.append(self.indie_ana)
+
+        base_x_zombi = VIEWPORT_MARGIN + 35
+        self.zombie = DummyCharacter(DummyCharacter.CHARACTER_ZOMBIE, base_x_zombi, base_x_zombi + 150, 3)
+
+        self.zombie.center_x = base_x_zombi
+        self.zombie.center_y = 2*VIEWPORT_MARGIN - 100
+        self.menucharacters.append(self.zombie)
 
     def on_show(self):
         arcade.set_background_color(arcade.color.WHITE)
 
     def on_draw(self):
         arcade.start_render()
-        try:
-            self.background.draw(SCREEN_WIDTH//2, SCREEN_HEIGHT//2, SCREEN_WIDTH, SCREEN_HEIGHT)
-            self.draw_phrase("INDIE-ANA JONES", "Press SPACE to START")
-            self.menucharacters.draw()
-        except Exception as ex:
-            print("{id} : {ex} ".format(id=self.myid, ex=ex))
+        #try:
+        arcade.draw_lrwh_rectangle_textured(0, 0,
+                                            SCREEN_WIDTH, SCREEN_HEIGHT,
+                                            self.background)
+
+        #self.background.draw(SCREEN_WIDTH//2, SCREEN_HEIGHT//2, SCREEN_WIDTH, SCREEN_HEIGHT)
+        self.draw_phrase("INDIE-ANA JONES", "Press SPACE to START")
+        self.menucharacters.draw()
+        #except Exception as ex:
+        #    print("{id} : {ex} ".format(id=self.myid, ex=ex))
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.Q:
@@ -50,6 +58,8 @@ class MenuView(BaseView):
 
     def on_update(self, delta_time):
         """ Movement and game logic """
+        self.indie_ana.update_position()
+        self.zombie.update_position()
 
         self.menucharacters.update_animation()
 

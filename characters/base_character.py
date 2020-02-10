@@ -44,6 +44,7 @@ class BaseCharacter(arcade.Sprite):
         # side-to-side. Box is centered at sprite center, (0, 0)
         #self.points = [[-22, -64], [22, -64], [22, 28], [-22, 28]]
         self.points = [[-15, -44], [15, -44], [15, 21], [-15, 21]]
+        self.scale = self.CHARACTER_SCALING
         self.load_textures(self.assets_availables[type_of_character])
 
     @classmethod
@@ -52,8 +53,8 @@ class BaseCharacter(arcade.Sprite):
         Load a texture pair, with the second being a mirror image.
         """
         return [
-            arcade.load_texture(filename, scale=cls.CHARACTER_SCALING),
-            arcade.load_texture(filename, scale=cls.CHARACTER_SCALING, mirrored=True)
+            arcade.load_texture(filename),
+            arcade.load_texture(filename, mirrored=True)
         ]
 
     def load_textures(self, main_path):
