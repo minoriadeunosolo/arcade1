@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.2" orientation="isometric" renderorder="right-down" compressionlevel="-1" width="50" height="50" tilewidth="256" tileheight="128" infinite="0" nextlayerid="7" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="isometric" renderorder="right-down" width="50" height="50" tilewidth="256" tileheight="128" infinite="0" nextlayerid="8" nextobjectid="1">
  <tileset firstgid="1" name="patrones" tilewidth="256" tileheight="512" tilecount="432" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="288">
@@ -1299,14 +1299,19 @@
    <image width="256" height="512" source="../images/isometric_arcade/woodenSupportsBlock_W.png"/>
   </tile>
  </tileset>
- <layer id="6" name="END" width="50" height="50">
+ <layer id="7" name="INIT_ENEMIES" width="50" height="50" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt1skNACAIBEBil/bfiDX4UFwzUwEhy1EFZ83RXQHQaWcH2BcAwAv8JCSTXwCSuFukkFXIZoZJJbt36DP8aQHHZQOP
+  </data>
+ </layer>
+ <layer id="6" name="END" width="50" height="50" visible="0">
   <data encoding="base64" compression="zlib">
    eJztzyEOADAIA0B4NP+fnQENyV1SUddGAAAAAAAAAADAbZVzrvBjFz926bb//QFBOxYh
   </data>
  </layer>
- <layer id="5" name="Holes" width="50" height="50">
+ <layer id="5" name="Holes" width="50" height="50" visible="0">
   <data encoding="base64" compression="zlib">
-   eJzt2EEKgCAURVFr/5NW0TZDnERQimi+/7gHnIa34kulhOzYVu9gDDq0qHTkfdyXi3MvCwAies5mtxkNYK7a7IgyV2r7pONfre/Uyo6387P1XFXpaEGHFjq0OJyBUfTM2q9rOaBDi0vHLKPn4cp/GS7Pmg4tdGhx6UBckb6JHLncczq0uHSgzwVc40id
+   eJzt2EEKgDAMRNF6/5U3lu5E0MZSzWT4D9xKv5YUbQ3dvmWvYA06tKh09HWcLwBAvutsZkYDeGM0O6rMldE66fhXdE9ldtydn9FzVaUjgg4tdGhxOAOrmJm1T/dyQIcWl46vrJ6Hmf8yXN41HVro0OLSgboqfRM5cnnmdGhx6cCcAw9IR0s=
   </data>
  </layer>
  <layer id="1" name="Floor" width="50" height="50">

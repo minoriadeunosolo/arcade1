@@ -8,6 +8,7 @@ from common import SPRITE_SCALING
 from common import BASE_RESOURCES
 from view_modes.view_manager import ViewManager
 
+
 class BaseView(arcade.View):
     viewmngr = ViewManager()
 
@@ -42,36 +43,27 @@ class BaseView(arcade.View):
                     tile_sprite.center_x = grid_location.center_x * SPRITE_SCALING
                     tile_sprite.center_y = grid_location.center_y * SPRITE_SCALING
                     sprite_list.append(tile_sprite)
-                    if tail == "stoneStep_W.png":
-                        print("x:{} y:{}".format(tile_sprite.center_x,tile_sprite.center_y))
 
-
-                    # print(f"{grid_location.tile.source} -- ({tile_sprite.center_x:4}, {tile_sprite.center_y:4})")
                     if show_details:
                         newpoints_onlytoprint = []
                         for p in tile_sprite.hit_box:
                             px, py = p
 
-                            if py<0:
-                                if py<-150:
+                            if py < 0:
+                                if py < -150:
                                     ny = py + 50
                                 else:
                                     ny = py - 50
 
-                                if px<0:
+                                if px < 0:
                                     nx = px + 50
                                 else:
                                     nx = px - 50
                             else:
-                                nx,ny = px, py
-                            newpoints_onlytoprint.append([nx,ny])
-                        #sprite_list.hit_box = newpoints_onlytoprint
+                                nx, ny = px, py
+                            newpoints_onlytoprint.append([nx, ny])
                         tile_sprite._point_list_cache = None
-                        #special_hit_box.append([(tile_sprite.center_x + p[0], tile_sprite.center_y + p[1]) for p in newpoints_onlytoprint])
                         tile_sprite.hit_box = newpoints_onlytoprint
-
-
-                        #print("New points:{}".format(special_hit_box))
 
     def grid_to_points(self,grid_x, grid_y):
         px, py = arcade.isometric_grid_to_screen(grid_x, grid_y,

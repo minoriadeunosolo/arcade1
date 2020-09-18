@@ -5,7 +5,7 @@ REPAIRED_STONE = "stoneUneven_{}.png"
 ORIENTATIONS = ["N","S","E","W"]
 MAX_INDEX_ORIENTATIONS = len(ORIENTATIONS)-1
 RES_RAPAIRED_STONE = BASE_RESOURCES + REPAIRED_STONE
-xxRES_MAP = 'resources/tmx_maps/isometric_dungeon_quick.tmx'
+xxx_RES_MAP = 'resources/tmx_maps/dungeon_little.tmx'
 RES_MAP = 'resources/tmx_maps/dungeon_final.tmx'
 
 RES_BACKGROUND = BASE_RESOURCES + "abstract_1.jpg"
@@ -14,8 +14,13 @@ STATUS_YOUWIN = 1
 STATUS_GAMEOVER = 2
 STATUS_PLAYING = 3
 
-RES_MUSIC = "resources/sounds/"
-RES_BACKGROUND_MUSIC = RES_MUSIC + "FallidoIndianaJam.wav"
+RES_SOUNDS = "resources/sounds/"
+RES_BACKGROUND_MUSIC = RES_SOUNDS + "FallidoIndianaJam.wav"
+
+RES_REPAIRING_SOUND_1 = RES_SOUNDS + "hit1.wav"
+RES_REPAIRING_SOUND_4 = RES_SOUNDS + "hit4.wav"
+RES_REPAIRING_SOUND_5 = RES_SOUNDS + "hit5.wav"
+RES_REPAIRING_SOUND_LIST = [RES_REPAIRING_SOUND_1, RES_REPAIRING_SOUND_4, RES_REPAIRING_SOUND_5]
 
 
 SCREEN_WIDTH = 1024 # 800

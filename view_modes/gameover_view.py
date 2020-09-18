@@ -1,3 +1,6 @@
+import traceback
+import sys
+
 import arcade
 
 from view_modes.base_view import BaseView
@@ -27,11 +30,16 @@ class GameOverView(BaseView):
     def on_draw(self):
         arcade.start_render()
         try:
-            self.background.draw(SCREEN_WIDTH//2, SCREEN_HEIGHT//2, SCREEN_WIDTH, SCREEN_HEIGHT)
+            arcade.draw_lrwh_rectangle_textured(0, 0,
+                                                SCREEN_WIDTH, SCREEN_HEIGHT,
+                                                self.background)
+            #self.background.draw(SCREEN_WIDTH//2, SCREEN_HEIGHT//2, SCREEN_WIDTH, SCREEN_HEIGHT)
             self.draw_phrase("GAME OVER", "Press SPACE to MENU")
             self.menucharacters.draw()
         except Exception as ex:
-            print("{id} : {ex} ".format(id=self.myid, ex=ex))
+            print("{id} -> {ex} ".format(id=self.myid, ex=ex))
+            exc_type, exc_value, exc_tb = sys.exc_info()
+            traceback.print_exception(exc_type, exc_value, exc_tb)
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.Q:

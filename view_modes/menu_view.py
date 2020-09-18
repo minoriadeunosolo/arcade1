@@ -38,16 +38,13 @@ class MenuView(BaseView):
 
     def on_draw(self):
         arcade.start_render()
-        #try:
+
         arcade.draw_lrwh_rectangle_textured(0, 0,
                                             SCREEN_WIDTH, SCREEN_HEIGHT,
                                             self.background)
 
-        #self.background.draw(SCREEN_WIDTH//2, SCREEN_HEIGHT//2, SCREEN_WIDTH, SCREEN_HEIGHT)
         self.draw_phrase("INDIE-ANA JONES", "Press SPACE to START")
         self.menucharacters.draw()
-        #except Exception as ex:
-        #    print("{id} : {ex} ".format(id=self.myid, ex=ex))
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.Q:

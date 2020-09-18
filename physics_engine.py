@@ -2,14 +2,23 @@
 Physics engines for isometric dungeon.
 """
 # pylint: disable=too-many-arguments, too-many-locals, too-few-public-methods
+from functools import partial
 
 from arcade import check_for_collision_with_list
 from arcade import check_for_collision
 from arcade import Sprite
 from arcade import SpriteList
+from arcade import play_sound, load_sound
+from pyglet.clock import schedule_once
 
 from util import repair_nearby_tiles
-from common import STATUS_YOUWIN, STATUS_GAMEOVER, STATUS_PLAYING
+from common import (STATUS_YOUWIN, STATUS_GAMEOVER, STATUS_PLAYING, RES_REPAIRING_SOUND_LIST, RES_REPAIRING_SOUND_1,
+                    RES_REPAIRING_SOUND_4, RES_REPAIRING_SOUND_5)
+
+
+def play_physics_sound(*args):
+    if args:
+        play_sound(args[0])
 
 
 class PhysicsEngineIsometric:
@@ -40,7 +49,7 @@ class PhysicsEngineIsometric:
                                                 center_x = self.player_sprite.center_x,
                                                 center_y = self.player_sprite.center_y,
                                                 )
-
+        self.sounds_repairing = [load_sound(res) for res in RES_REPAIRING_SOUND_LIST]
 
     def update(self, mygame):
             """
@@ -70,15 +79,23 @@ class PhysicsEngineIsometric:
                 return STATUS_GAMEOVER, enemyhit_list
 
             # Check for wall hit
-            hit_list = check_for_collision_with_list(self.player_sprite,
-                                              self.walls)
+            hit_list = check_for_collision_with_list(self.player_sprite, self.walls)
 
             if not hit_list:
-                hit_list = check_for_collision_with_list(self.player_sprite,
-                                              self.holes)
+                hit_list = check_for_collision_with_list(self.player_sprite, self.holes)
 
                 if hit_list:
                     if self.player_sprite.repairing:
+                        ds = None
+                        DELAY_TIME = 0.1
+                        for m in self.sounds_repairing:
+                            if not ds:
+                                play_physics_sound(m)
+                                ds = DELAY_TIME
+                            else:
+                                schedule_once(partial(play_physics_sound, m), ds)
+                                ds += DELAY_TIME
+
                         self.player_sprite.repairing = False
                         self.expanded_sprite.center_x = self.player_sprite.center_x
                         self.expanded_sprite.center_y = self.player_sprite.center_y
@@ -86,13 +103,10 @@ class PhysicsEngineIsometric:
                 else:
                     self.player_sprite.repairing = False
 
-
             # If we hit a wall, move so the edges are at the same point
             if len(hit_list) > 0:
                 self.player_sprite.center_x = prev_x
                 self.player_sprite.center_y = prev_y
-                #for sp in hit_list:
-                #    print(sp.texture)
 
             self.player_sprite.update_animation()
             for enemy in self.enemies:
@@ -100,8 +114,7 @@ class PhysicsEngineIsometric:
                 e_y = enemy.center_y
                 enemy.center_x += enemy.change_x
                 enemy.center_y += enemy.change_y
-                hit_list = check_for_collision_with_list(enemy,
-                                                  self.walls)
+                hit_list = check_for_collision_with_list(enemy, self.walls)
                 if hit_list:
                     enemy.center_x = e_x
                     enemy.center_y = e_y

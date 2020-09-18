@@ -1,6 +1,6 @@
 arcade==2.3.4
 attrs==19.3.0
-dataclasses==0.7
+dataclasses
 future==0.18.2
 numpy==1.18.1
 Pillow==7.0.0

@@ -79,6 +79,7 @@ class GameView(BaseView):
         self.holes_list = arcade.SpriteList(use_spatial_hash=True)
         self.enemies_list = arcade.SpriteList()
         self.endzone_list =arcade.SpriteList(use_spatial_hash=True)
+        init_positions_enemies_list = arcade.SpriteList()
 
         # noinspection PyDeprecation
         self.my_map = arcade.read_tiled_map(RES_MAP, SPRITE_SCALING)
@@ -94,44 +95,31 @@ class GameView(BaseView):
         self.player_sprite.center_y = py * SPRITE_SCALING
         self.player_list.append(self.player_sprite)
 
-        enemy_points=[(3156, 1846,"LEFT", EnemyCharacter.ENEMY_FASTEST_SPEED),
-                      (2808, 1384, "DOWN", EnemyCharacter.ENEMY_SLOWEST_SPEED),
-                      (1036, 1250, "RIGHT", EnemyCharacter.ENEMY_FASTEST_SPEED),
-                      (2508, 2502, "LEFT", EnemyCharacter.ENEMY_SLOWEST_SPEED),
-                      (3132, 2994, "DOWN", EnemyCharacter.ENEMY_FASTEST_SPEED),
-                      (3148, 2586, "DOWN", EnemyCharacter.ENEMY_SLOWEST_SPEED),
-                      (3592, 336, "RIGHT", EnemyCharacter.ENEMY_FASTEST_SPEED),
-                      (4164, 1254, "DOWN", EnemyCharacter.ENEMY_FASTEST_SPEED),
-                      (6004, 1610, "LEFT", EnemyCharacter.ENEMY_SLOWEST_SPEED),
-                      (416, 1592, "DOWN", EnemyCharacter.ENEMY_SLOWEST_SPEED)]
+        enemies_DS=[(EnemyCharacter.INITIAL_DIRECTION_LEFT, EnemyCharacter.ENEMY_FASTEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_DOWN, EnemyCharacter.ENEMY_SLOWEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_RIGHT, EnemyCharacter.ENEMY_FASTEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_LEFT, EnemyCharacter.ENEMY_SLOWEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_DOWN, EnemyCharacter.ENEMY_FASTEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_DOWN, EnemyCharacter.ENEMY_SLOWEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_RIGHT, EnemyCharacter.ENEMY_FASTEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_DOWN, EnemyCharacter.ENEMY_FASTEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_LEFT, EnemyCharacter.ENEMY_SLOWEST_SPEED),
+                      (EnemyCharacter.INITIAL_DIRECTION_DOWN, EnemyCharacter.ENEMY_SLOWEST_SPEED)]
 
-        for ep in enemy_points:
-            enemy_sprite = EnemyCharacter()
-
-            enemy_sprite.center_x = ep[0]
-            enemy_sprite.center_y = ep[1]
-            direction = ep[2]
-            mov_speed = ep[3]
-
-            if direction == "UP":
-                enemy_sprite.change_y = mov_speed*EnemyCharacter.MOV_Y
-                enemy_sprite.change_x = -mov_speed*EnemyCharacter.MOV_X
-            elif  direction == "DOWN":
-                enemy_sprite.change_y = -mov_speed*EnemyCharacter.MOV_Y
-                enemy_sprite.change_x = mov_speed*EnemyCharacter.MOV_X
-            elif direction == "LEFT":
-                enemy_sprite.change_x = -mov_speed*EnemyCharacter.MOV_X
-                enemy_sprite.change_y = -mov_speed*EnemyCharacter.MOV_Y
-            elif direction == "RIGHT":
-                enemy_sprite.change_x = mov_speed*EnemyCharacter.MOV_X
-                enemy_sprite.change_y = mov_speed*EnemyCharacter.MOV_Y
-            self.enemies_list.append(enemy_sprite)
-
-        self.read_sprite_list(self.my_map.layers["Floor"], self.floor_list,255)
+        self.read_sprite_list(self.my_map.layers["Floor"], self.floor_list, 255)
         self.read_sprite_list(self.my_map.layers["Walls"], self.wall_list, 255)
         self.read_sprite_list(self.my_map.layers["Furniture"], self.furniture_list, 255)
-        self.read_sprite_list(self.my_map.layers["Holes"], self.holes_list, 255, show_details=True)
-        self.read_sprite_list(self.my_map.layers["END"], self.endzone_list,255)
+        self.read_sprite_list(self.my_map.layers["Holes"], self.holes_list, 255)
+        self.read_sprite_list(self.my_map.layers["END"], self.endzone_list, 255)
+        self.read_sprite_list(self.my_map.layers["INIT_ENEMIES"], init_positions_enemies_list, 255)
+
+        for ix in range(0, min(len(init_positions_enemies_list), len(enemies_DS))):
+            direction, speed = enemies_DS[ix][0], enemies_DS[ix][1]
+            center_x, center_y = init_positions_enemies_list[ix].center_x, init_positions_enemies_list[ix].center_y
+            enemy_sprite = EnemyCharacter(initial_direction=direction, mov_speed=speed)
+            enemy_sprite.center_x = center_x
+            enemy_sprite.center_y = center_y
+            self.enemies_list.append(enemy_sprite)
 
         # Set the background color
         if self.my_map.backgroundcolor is None:
@@ -144,7 +132,8 @@ class GameView(BaseView):
         self.view_left = 0
         self.view_bottom = 0
 
-        self.physics_engine = PhysicsEngineIsometric(self.player_sprite, self.wall_list, self.holes_list, self.floor_list, self.enemies_list, self.endzone_list)
+        self.physics_engine = PhysicsEngineIsometric(self.player_sprite, self.wall_list, self.holes_list,
+                                                     self.floor_list, self.enemies_list, self.endzone_list)
 
         self.last_update_alpha_x = self.player_sprite.center_x
         self.last_update_alpha_y = self.player_sprite.center_y
@@ -221,6 +210,11 @@ class GameView(BaseView):
         if status == STATUS_GAMEOVER:
             stop_background_music()
             self.changeviewmode(VIEWMODE_GAMEOVER)
+            return
         elif status == STATUS_YOUWIN:
             stop_background_music()
             self.changeviewmode(VIEWMODE_YOUWIN)
+            return
+
+        for enemy in self.enemies_list:
+            enemy.try_madness()

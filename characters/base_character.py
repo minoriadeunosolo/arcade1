@@ -67,3 +67,13 @@ class BaseCharacter(arcade.Sprite):
             texture = self.load_texture_pair(f"{main_path}_walk{i}.png")
             self.walk_textures.append(texture)
         self.texture = self.walk_textures[0][self.character_face_direction] #just to ensure initialize texture
+
+        self.madness_textures = []
+        texture = self.load_texture_pair(f"{main_path}_jump.png")
+        self.madness_textures.append(texture)
+        texture = self.load_texture_pair(f"{main_path}_fall.png")
+        self.madness_textures.append(texture)
+        texture = self.load_texture_pair(f"{main_path}_climb0.png")
+        self.madness_textures.append(texture)
+        texture = self.load_texture_pair(f"{main_path}_climb1.png")
+        self.madness_textures.append(texture)
