@@ -2,7 +2,7 @@ arcade==2.3.4
 attrs==19.3.0
 dataclasses
 future==0.18.2
-numpy==1.18.1
+numpy==1.22.0
 Pillow==7.0.0
 pyglet
 pyglet-ffmpeg2
