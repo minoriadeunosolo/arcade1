@@ -3,7 +3,7 @@ attrs==19.3.0
 dataclasses
 future==0.18.2
 numpy==1.18.1
-Pillow==7.0.0
+Pillow==9.3.0
 pyglet
 pyglet-ffmpeg2
 pytiled-parser==0.9.2
